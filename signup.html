@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Regístrese</title>
+    </head>
+
+    <body>
+        <div id="signupDiv">
+            <p><input id="correo" type="text" placeholder="Correo"></p> 
+            <p><input id="password" type="password" placeholder="Password"></p>
+            <p><input id="repassword" type="password" placeholder="Vuelva a escribir el passsword"></p>
+            <p><button id="regBtn">Registrarse</button></p>
+            <p><a href="signup.html">Ya tengo cuenta</a></p>
+        </div>
+    </body>
+
+</html>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCMgEXHmgB_9gfWQ1Ovpy1yxmrVRrGKG5Y",
+    authDomain: "parcial2-3c25b.firebaseapp.com",
+    databaseURL: "https://parcial2-3c25b-default-rtdb.firebaseio.com",
+    projectId: "parcial2-3c25b",
+    storageBucket: "parcial2-3c25b.appspot.com",
+    messagingSenderId: "818451434525",
+    appId: "1:818451434525:web:170035ea6ae2696366caf4",
+    measurementId: "G-XV96DMN63T"
+  };
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="js/signup.js"></script>
