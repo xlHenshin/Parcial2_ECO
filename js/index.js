@@ -68,6 +68,7 @@ database.ref('parcial2/peliculas').on('value', function(data){
 });
 
 calificarBtn.addEventListener('click', ()=>{
+
     for (let i = 0; i < arrayComponente.length; i++) {
         console.log(">>>"+arrayComponente[i].pelicula.nombre);
         database.ref('parcial2/peliculas/'+arrayComponente[i].pelicula.id).once(
@@ -109,11 +110,10 @@ calificarBtn.addEventListener('click', ()=>{
         }
     );
 
-    alert("Muchas gracias por votar, redirigiendo al login...");
-
     auth.signOut().then(
         ()=>{
             window.location.href="login.html";
+            
         }
     ).catch(
         (error)=>{

@@ -1,0 +1,19 @@
+#loginDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+
+#loginBtn{
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    background-color: rgb(96, 215, 219);
+    margin-bottom: 50px;
+}
