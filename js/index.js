@@ -14,7 +14,7 @@ let haVotado;
 auth.onAuthStateChanged(
     (user)=>{
         if(user !== null){
-            console.log(user.uid);
+            //console.log(user.uid);
             database.ref('parcial2/users/'+user.uid).once(
                 'value',
                 (data)=>{
@@ -70,7 +70,7 @@ database.ref('parcial2/peliculas').on('value', function(data){
 calificarBtn.addEventListener('click', ()=>{
 
     for (let i = 0; i < arrayComponente.length; i++) {
-        console.log(">>>"+arrayComponente[i].pelicula.nombre);
+        //console.log(">>>"+arrayComponente[i].pelicula.nombre);
         database.ref('parcial2/peliculas/'+arrayComponente[i].pelicula.id).once(
             'value',
             (data)=>{
@@ -82,7 +82,7 @@ calificarBtn.addEventListener('click', ()=>{
 
             let promedio= (rateUsuario+(votosActuales*rateActual))/(rateActual+1);
 
-            console.log("Promedio: "+promedio);
+            //console.log("Promedio: "+promedio);
 
             let peliPromedio = {
                 calificacion: promedio,
@@ -109,6 +109,8 @@ calificarBtn.addEventListener('click', ()=>{
             database.ref('parcial2/users/'+userVoto.id).set(userVoto);
         }
     );
+
+    alert("Gracias por votar, redirigiendo al login...");
 
     auth.signOut().then(
         ()=>{
