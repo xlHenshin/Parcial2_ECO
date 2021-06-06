@@ -22,7 +22,7 @@ loginBtn.addEventListener('click',()=>{
         }
     ).catch(
         (error)=>{
-            alert("Los datos digitados no concuerdan");
+            alert("Ingrese los datos correctamente");
             console.log(error);
         }
     ); 

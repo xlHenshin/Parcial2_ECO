@@ -69,18 +69,25 @@ database.ref('parcial2/peliculas').on('value', function(data){
 
 calificarBtn.addEventListener('click', ()=>{
 
+    if(arrayComponente[0].valorVoto==null || arrayComponente[1].valorVoto==null || arrayComponente[2].valorVoto==null ||
+        arrayComponente[3].valorVoto==null || arrayComponente[4].valorVoto==null){
+        alert("Vote por todas las películas");
+        return;
+    }   
+
     for (let i = 0; i < arrayComponente.length; i++) {
         //console.log(">>>"+arrayComponente[i].pelicula.nombre);
         database.ref('parcial2/peliculas/'+arrayComponente[i].pelicula.id).once(
             'value',
             (data)=>{
+
             let pelisDB=data.val();
 
             let rateUsuario=parseInt(arrayComponente[i].valorVoto,10);
             let rateActual=parseInt(pelisDB.calificacion,10);
             let votosActuales=parseInt(pelisDB.votos,10);
 
-            let promedio= (rateUsuario+(votosActuales*rateActual))/(rateActual+1);
+            let promedio= (rateUsuario+(votosActuales*rateActual))/(votosActuales+1);
 
             //console.log("Promedio: "+promedio);
 
@@ -110,16 +117,18 @@ calificarBtn.addEventListener('click', ()=>{
         }
     );
 
-    alert("Gracias por votar, redirigiendo al login...");
-
-    auth.signOut().then(
-        ()=>{
-            window.location.href="login.html";
+    alert("Gracias por votar, redirigiendo al login en 3 segundos...");
+        setTimeout(()=>{
             
-        }
-    ).catch(
-        (error)=>{
-            alert(error.message);
-        }
-    );
+            auth.signOut().then(
+                ()=>{
+                    window.location.href="login.html";
+                    
+                }
+            ).catch(
+                (error)=>{
+                    alert(error.message);
+                }
+            );
+        },3000);
 });
