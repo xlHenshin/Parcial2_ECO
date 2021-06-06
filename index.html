@@ -3,22 +3,28 @@
 
     <head>
       <title>Cine Colombia</title>
+      <link rel="stylesheet" href="css/index.css">
     </head>
 
     <body>
-      <div id="inicioContainer">
-        <h1>Cine Colombia</h1>
-        <p><h3>Califica las películas</h3></p>
+
+      <div id="infoContainer">
+        <div id="inicioContainer">
+          <h1>Cine Colombia</h1>
+          <h3>Califica las películas</h3>
+        </div>
+        <div id="userContainer">
+          <p><h3>Información Usuario</h3></p>
+          <p id="username">...</p>
+          <p id="correo">...</p>
+          <button id="logoutBtn">Cerrar sesión</button>
+        </div>
       </div>
 
-      <div id="userContainer">
-        <p><h3>Información Usuario</h3></p>
-        <p id="username">...</p>
-        <p id="correo">...</p>
+      <div id="calificacionContainer">
+        <div id="peliculaContainer"></div>
+        <button id="calificarBtn">Calificar</button>
       </div>
-
-      <div id="peliculaContainer"></div>
-      <button id="logoutBtn">Cerrar sesión</button>
     </body>
 
 </html>

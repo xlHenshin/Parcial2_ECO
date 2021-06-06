@@ -1,17 +1,122 @@
+#html{
+    background-color: rgb(182, 240, 255);
+}
+
+#infoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#inicioContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+
+}
+
+#userContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    margin-top: 20px;
+}
+
+#logoutBtn{
+    border-radius: 5px;
+    width: 20%;
+    margin-top: 10px;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    background-color: rgb(96, 215, 219);
+}
+
+#calificacionContainer{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#calificarBtn{
+    border-radius: 5px;
+    width: 20%;
+    margin-top: 50px;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    border: none;
+    background-color: rgb(96, 215, 219);
+    margin-bottom: 50px;
+}
+
+#peliculaContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.Pelicula{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: rgb(233, 233, 233);
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+.infoDiv{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.nombrePeli{
+    position: relative;
+    display: flex;
+    padding-left: 25px;
+    font-family: "Poppins", sans-serif;
+    margin: 10px;
+    width: 100%;
+}
+
+.calificacion{
+    position: relative;
+    display: flex;
+    padding-left: 25px;
+    font-family: "Poppins", sans-serif;
+    margin: 10px;
+    width: 100%;
+}
+
+
 *{
     margin: 0;
     padding: 0;
 }
-.starContainer {
+.rate {
     float: left;
     height: 46px;
     padding: 0 10px;
 }
-.starContainer:not(:checked) > input {
+.rate:not(:checked) > input {
     position:absolute;
     top:-9999px;
 }
-.starContainer:not(:checked) > label {
+.rate:not(:checked) > label {
     float:right;
     width:1em;
     overflow:hidden;
@@ -20,20 +125,20 @@
     font-size:30px;
     color:#ccc;
 }
-.starContainer:not(:checked) > label:before {
-    content: '★';
+.rate:not(:checked) > label:before {
+    content: '★ ';
 }
-.starContainer > input:checked ~ label {
+.rate > input:checked ~ label {
     color: #ffc700;    
 }
-.starContainer:not(:checked) > label:hover,
-.starContainer:not(:checked) > label:hover ~ label {
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
     color: #deb217;  
 }
-.starContainer > input:checked + label:hover,
-.starContainer > input:checked + label:hover ~ label,
-.starContainer > input:checked ~ label:hover,
-.starContainer > input:checked ~ label:hover ~ label,
-.starContainer > label:hover ~ input:checked ~ label {
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
