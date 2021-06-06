@@ -4,6 +4,8 @@ const correo = document.getElementById('correo');
 const password = document.getElementById('password');
 const loginBtn = document.getElementById('loginBtn');
 
+let usuario;
+
 auth.onAuthStateChanged(
     (user)=>{
         if(user !== null){
@@ -13,6 +15,7 @@ auth.onAuthStateChanged(
 );
 
 loginBtn.addEventListener('click',()=>{
+
     auth.signInWithEmailAndPassword(correo.value, password.value).then(
         (data)=>{
             window.location.href = 'index.html';
@@ -22,5 +25,5 @@ loginBtn.addEventListener('click',()=>{
             alert("Los datos digitados no concuerdan");
             console.log(error);
         }
-    );
+    ); 
 });

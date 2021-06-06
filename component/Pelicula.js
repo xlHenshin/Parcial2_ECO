@@ -17,7 +17,8 @@ class Pelicula{
 
         let calificacion = document.createElement("div");
         calificacion.className="calificacion";
-        calificacion.innerHTML=this.pelicula.calificacion;
+        let number = this.pelicula.calificacion;
+        calificacion.innerHTML=number.toFixed(1);
 
 
         let starContainer = document.createElement("div");
